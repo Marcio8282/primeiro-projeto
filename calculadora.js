@@ -1,29 +1,29 @@
-function calcular() {
-  const num1 = parseFloat(document.getElementById('num1').value);
-  const num2 = parseFloat(document.getElementById('num2').value);
-  const operador = document.getElementById('operador').value;
+ function calcular() {
+   const num1 =
+   parseFloat(document.getElementById('num1').value);
+  const num2 =
+    parseFloat(document.getElementById('num2').value);
+  const operador =
+    document.getElementById('operador').value;
   let resultado;
-
-  if (isNaN(num1) || isNaN(num2)) {
-    resultado = 'Por favor, insira dois números válidos.';
-  } else {
+   
     switch (operador) {
-      case '+':
+      case "+":
         resultado = num1 + num2;
         break;
-      case '-':
+      case "-":
         resultado = num1 - num2;
         break;
-      case '*':
+      case "*":
         resultado = num1 * num2;
         break;
-      case '/':
-        resultado = num2 === 0 ? 'Não é possível dividir por zero.' : num1 / num2;
+      case "/":
+        resultado = num2 !== 0 ? : num1 / num2:"Erro:divisão po zero";
         break;
-      default:
-        resultado = 'Operador inválido.';
-    }
-  }
 
-  document.getElementById('resultado').textContent = Resultado: ${resultado};
-}
+      default:
+        resultado = "Operador inválido";
+    }
+  document.getElementById('resultado').textContent = Resultado: ("resultado").textcontent =
+    "resultado" + resultado
+
