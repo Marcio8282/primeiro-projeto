@@ -2,25 +2,75 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Portfólio - Marcio Cardoso</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora Simples</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+    input, select, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 5px;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: green;
+    }
+  </style>
 </head>
 <body>
-  <h1>Olá! Eu sou o Marcio Cardoso</h1>
-  <p>Estudante de Tecnologia da Informação com foco em programação, Git e GitHub.</p>
-  <p>Estou aprendendo lógica de programação, HTML e ferramentas do universo web.</p>
-  <p>Tenho experiência internacional nos Estados Unidos, o que fortaleceu minha capacidade de adaptação e trabalho em equipe.</p>
+  <h1>Calculadora Simples</h1>
+  
+  <input type="number" id="num1" placeholder="Número 1" />
+  <select id="operador">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value=""></option>
+    <option value="/">/</option>
+  </select>
+  <input type="number" id="num2" placeholder="Número 2" />
+  
+  <button onclick="calcular()">Calcular</button>
+  
+  <p id="resultado"></p>
 
-  <h2>Conecte-se comigo:</h2>
-  <ul>
-    <li><a href="https://www.linkedin.com/in/marcioccampos2025" target="_blank">LinkedIn</a></li>
-    <li>Email: marcioccampos2025@gmail.com</li>
-  </ul>
+  <script>
+    function calcular() {
+      const num1 = parseFloat(document.getElementById('num1').value);
+      const num2 = parseFloat(document.getElementById('num2').value);
+      const operador = document.getElementById('operador').value;
+      let resultado;
 
-  <h2>Projetos</h2>
-  <ul>
-    <li><a href="https://github.com/Marcio8282/primeiro-projeto" target="_blank">Projeto 1 - Calculadora Simples</a></li>
-    <li><a href="https://github.com/Marcio8282/segundo-projeto" target="_blank">Projeto 2 - Página de Contato</a></li>
-  </ul>
+      if (isNaN(num1) || isNaN(num2)) {
+        resultado = 'Por favor, insira dois números válidos.';
+      } else {
+        switch (operador) {
+          case '+':
+            resultado = num1 + num2;
+            break;
+          case '-':
+            resultado = num1 - num2;
+            break;
+          case '*':
+            resultado = num1 * num2;
+            break;
+          case '/':
+            resultado = num2 !== 0 ? num1 / num2 : 'Erro: divisão por zero';
+            break;
+          default:
+            resultado = 'Operador inválido';
+        }
+      }
+
+      document.getElementById('resultado').innerText = Resultado: ${resultado};
+    }
+  </script>
 </body>
 </html>
