@@ -18,11 +18,7 @@ function calcular() {
         resultado = num1 * num2;
         break;
       case '/':
-        if (num2 === 0) {
-          resultado = 'Não é possível dividir por zero.';
-        } else {
-          resultado = num1 / num2;
-        }
+        resultado = num2 === 0 ? 'Não é possível dividir por zero.' : num1 / num2;
         break;
       default:
         resultado = 'Operador inválido.';
